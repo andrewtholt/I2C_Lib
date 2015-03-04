@@ -1,6 +1,6 @@
 BINS=i2cTest
 
-all:	i2cTest
+all:	i2cTest libi2c.so
 
 i2cTest:	i2cTest.c
 	gcc -g i2cTest.c -o i2cTest
