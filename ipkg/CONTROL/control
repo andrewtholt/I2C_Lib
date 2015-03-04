@@ -1,0 +1,11 @@
+Package: libi2c
+Version: 1.01
+Depends: 
+Provides: 
+Source: package/base-files
+Section: libs
+Priority: optional
+Maintainer: Andrew
+Architecture: mipsel
+Description:  i2c via a serial dongle
+

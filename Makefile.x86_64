@@ -1,0 +1,21 @@
+BINS=i2cTest
+
+all:	i2cTest
+
+i2cTest:	i2cTest.c
+	gcc -g i2cTest.c -o i2cTest
+
+libi2c.so:	libi2c.c
+	gcc -c -g -fPIC -shared libi2c.c -o libi2c.so
+
+install:	libi2c.so
+	cp libi2c.so /usr/local/lib
+	/sbin/ldconfig
+
+clean: 
+	rm -f libi2c.so 
+	rm -f cscope.out
+	rm -f $(BINS)
+	rm -f *.o
+	rm -rf i2c2.dSYM
+

@@ -1,0 +1,14 @@
+BASE=/home/andrewh/Source/Linux/kamikaze_7.09/staging_dir_mipsel/bin
+CC=$(BASE)/mipsel-linux-uclibc-gcc
+
+libi2c.so:	libi2c.c
+	$(CC) -g -fPIC -shared libi2c.c -o libi2c.so
+
+install:	libi2c.so
+	mkdir -p ./ipkg/CONTROL
+	mkdir -p ./ipkg/usr/local/lib
+	cp libi2c.so ./ipkg/usr/local/lib
+#	/sbin/ldconfig
+
+clean:	
+	rm -f libi2c.so 

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+chown root:root /usr/lib/libi2c.so
+chmod 544 /usr/lib/libi2c.so
+

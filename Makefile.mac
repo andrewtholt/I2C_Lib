@@ -1,0 +1,18 @@
+ARCH=-g -arch i386
+
+all:	i2c2
+
+libi2c.so:	libi2c.c
+	gcc $(ARCH) -c -g -fPIC -shared libi2c.c -o libi2c.so
+
+i2c2:	i2c2.c libi2c.so
+	gcc $(ARCH) i2c2.c -o i2c2 -L. -li2c 
+
+install:	libi2c.so
+	cp libi2c.so /usr/local/lib
+#	cp libi2c.dylib /usr/local/lib
+
+
+clean: 
+	rm -f libi2c.so 
+
